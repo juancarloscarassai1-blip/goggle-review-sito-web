@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google Review Card · Boost Review</title>
+  <meta name="description" content="La card NFC e QR che trasforma i clienti soddisfatti in recensioni Google. 20 €, una volta sola.">
+  <meta property="og:title" content="Google Review Card · Boost Review">
+  <meta property="og:description" content="Più recensioni su Google in 2 secondi: tocca con il telefono o inquadra il QR. 20 €, una volta sola.">
+  <meta property="og:image" content="media/poster-16x9.jpg">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #1A5CE6;
+      --blue-deep: #0B2E8A;
+      --star: #FFC107;
+      --green: #34A853;
+      --ink: #111827;
+      --ink-soft: #4B5563;
+      --bg: #F4F5F7;
+      --card: #FFFFFF;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+    h1, h2, h3, .brand { font-family: Poppins, Inter, sans-serif; }
+    a { color: inherit; }
+
+    .hero {
+      background: radial-gradient(ellipse at 50% 0%, #3B7BFF 0%, var(--blue) 45%, var(--blue-deep) 100%);
+      color: #fff;
+      padding: 20px 16px 72px;
+    }
+    .wrap { max-width: 1080px; margin: 0 auto; }
+    nav { display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-weight: 800; font-size: 22px; letter-spacing: 0.2px; }
+    .brand span { color: var(--star); }
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 60px);
+      line-height: 1.08;
+      margin: 48px 0 16px;
+      text-align: center;
+    }
+    .hero h1 em { font-style: normal; color: var(--star); }
+    .hero p.lead {
+      max-width: 640px;
+      margin: 0 auto 36px;
+      text-align: center;
+      font-size: clamp(17px, 2.2vw, 20px);
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .player {
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 30px 70px rgba(5, 15, 50, 0.45);
+    }
+    .player video { display: block; width: 100%; height: auto; }
+    .player.landscape { max-width: 960px; aspect-ratio: 16 / 9; }
+    .player.portrait { max-width: 400px; aspect-ratio: 9 / 16; }
+
+    section { padding: 72px 16px; }
+    section h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      text-align: center;
+      margin: 0 0 40px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .step {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 12px 30px rgba(15, 30, 70, 0.08);
+    }
+    .step .num {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: grid; place-items: center;
+      font-family: Poppins, sans-serif; font-weight: 800; font-size: 22px;
+      color: #fff; background: var(--blue);
+      margin-bottom: 16px;
+    }
+    .step h3 { margin: 0 0 8px; font-size: 21px; }
+    .step p { margin: 0; color: var(--ink-soft); }
+
+    .price {
+      background: var(--card);
+      border-radius: 28px;
+      padding: 40px 24px;
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto;
+      box-shadow: 0 20px 50px rgba(15, 30, 70, 0.1);
+    }
+    .price .amount {
+      font-family: Poppins, sans-serif;
+      font-weight: 800;
+      font-size: clamp(64px, 12vw, 96px);
+      line-height: 1;
+      color: var(--blue);
+    }
+    .price .once {
+      font-family: Poppins, sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: 1px;
+      margin: 10px 0 24px;
+    }
+    .price ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+      font-weight: 500;
+    }
+    .price li::before {
+      content: "✓";
+      display: inline-grid; place-items: center;
+      width: 26px; height: 26px; margin-right: 12px;
+      border-radius: 50%;
+      background: var(--green); color: #fff;
+      font-weight: 700; font-size: 15px;
+    }
+
+    footer {
+      padding: 32px 16px 48px;
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+    footer .brand { color: var(--ink); font-size: 18px; display: block; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <nav><div class="brand">Boost <span>Review</span></div></nav>
+      <h1>Più recensioni su Google,<br><em>in 2 secondi</em></h1>
+      <p class="lead">La Google Review Card porta i tuoi clienti soddisfatti direttamente alla pagina delle recensioni del tuo locale: basta un tocco con il telefono o un QR code.</p>
+      <div id="player" class="player landscape">
+        <video id="spot" controls playsinline preload="metadata"
+               poster="media/poster-16x9.jpg"
+               src="media/spot-16x9.mp4">
+          Il tuo browser non riproduce video HTML5.
+        </video>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <h2>Come funziona</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Avvicina il telefono</h3>
+          <p>Grazie all'NFC si apre all'istante la pagina per lasciare la recensione del tuo locale. Nessuna app, nessuna ricerca.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Oppure inquadra il QR</h3>
+          <p>Funziona con qualsiasi smartphone, iPhone e Android, anche senza NFC.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Mettila dove serve</h3>
+          <p>Alla cassa, sui tavoli, alla reception o in vetrina: ovunque il cliente sia felice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0">
+    <div class="price">
+      <div class="amount">20 €</div>
+      <div class="once">UNA VOLTA SOLA</div>
+      <ul>
+        <li>Nessun abbonamento</li>
+        <li>Nessun costo mensile</li>
+        <li>Funziona per sempre</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <span class="brand">Boost Review</span>
+    Google è un marchio di Google LLC. Prodotto non affiliato a Google.
+  </footer>
+
+  <script>
+    // Su schermi verticali (telefono) usa la versione 9:16 con sottotitoli.
+    (function () {
+      var video = document.getElementById("spot");
+      var box = document.getElementById("player");
+      var portrait = window.matchMedia("(max-width: 700px) and (orientation: portrait)").matches;
+      if (portrait) {
+        box.className = "player portrait";
+        video.poster = "media/poster-9x16.jpg";
+        video.src = "media/spot-9x16.mp4";
+      }
+    })();
+  </script>
+</body>
+</html>
